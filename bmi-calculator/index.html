@@ -15,14 +15,113 @@
   <meta name="msapplication-navbutton-color" content="#171B38">
   <!-- iOS Safari -->
   <meta name="apple-mobile-web-app-status-bar-style" content="#171B38">
+  <style>
+    /* Add custom CSS for styling */
+    body {
+      background-color: #f0f0f0; /* Set a light background color */
+      font-family: 'Montserrat', sans-serif; /* Use Google Font for text */
+      text-align: center;
+    }
+    .container-fluid {
+      max-width: 1200px; /* Limit the content width */
+      margin: 0 auto; /* Center align the content */
+      background-color: #fff; /* White background for content */
+      border-radius: 8px; /* Add a slight border radius to the content */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a shadow to the content */
+      padding: 20px; /* Add some padding around the content */
+    }
+    nav {
+      padding: 20px 0;
+    }
+    .logo {
+      max-width: 100px;
+      height: auto;
+    }
+    main {
+      padding: 40px 0;
+    }
+    .landing {
+      width: 100%;
+      height: auto;
+    }
+    .bmi-form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .bmi-form-item {
+      margin-bottom: 20px;
+    }
+    .btn-calculate {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .btn-calculate:hover {
+      background-color: #0056b3; /* Darker shade on hover */
+    }
+    footer {
+      padding: 20px 0;
+      font-size: 14px;
+    }
+    /* Add styles for the modal */
+    .modal-bg {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 100;
+    }
+    .modal-widget {
+      background: #fff;
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 100px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+    .close-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+    .modal-info-heading {
+      font-weight: 600;
+    }
+    .btn-share {
+      background-color: #25d366; /* WhatsApp green */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+    .whatsapp-icon {
+      width: 20px;
+      height: auto;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
-  
   <div class="container-fluid">
     <nav>
       <img class="logo" src="assets/images/logo.svg" alt="logo">
     </nav>
-
     <main>
       <div class="row">
         <div class="col-lg-6 col-12">
@@ -43,7 +142,6 @@
             <button onclick="openModal()" class="btn-calculate" type="submit">CALCULATE YOUR BMI</button>
           </div>
         </div>
-        
       </div>
     </main>
     <footer>
@@ -60,17 +158,18 @@
         <br>
         <h4 id="bmi-class">NORMAL WEIGHT</h4>
         <h1 id="user-bmi">22.1</h1>
-        <p iD="bmi-msg">You have a normal body 
-          weight. Good job!</p>
-          <br>
-          <a id="wpp-share" href= 
-          "whatsapp://send?text="
-          data-action="share/whatsapp/share"><button onclick="openModal()" class="btn-share"><img class="whatsapp-icon" src="assets/images/whatsapp-brands.svg" alt="whatsapp-brands">Share on WhatsApp</button></a>
+        <p id="bmi-msg">You have a normal body weight. Good job!</p>
+        <br>
+        <a id="wpp-share" href="whatsapp://send?text=" data-action="share/whatsapp/share">
+          <button onclick="openModal()" class="btn-share">
+            <img class="whatsapp-icon" src="assets/images/whatsapp-brands.svg" alt="whatsapp-brands">
+            Share on WhatsApp
+          </button>
+        </a>
       </div>
     </div>
   </div>
   <img class="grd" src="assets/images/gradient.svg" alt="gradient">
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
