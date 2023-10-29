@@ -182,5 +182,389 @@
   </div>
 
   <script src="assets/js/script.js"></script>
+  <style>
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply a universal box-sizing rule */
+* {
+  box-sizing: border-box;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* Global Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  color: #111;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+p {
+  font-weight: 300;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  color: #ff0157;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+header .navigation {
+  display: flex;
+  list-style: none;
+}
+
+header .navigation li {
+  margin-left: 30px;
+}
+
+header .navigation li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 400;
+}
+
+/* Banner Styles */
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../images/bg.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 100px;
+}
+
+.banner .content {
+  max-width: 900px;
+}
+
+/* Button Styles */
+.btn {
+  font-size: 1em;
+  color: #fff;
+  background-color: #ff0157;
+  display: inline-block;
+  padding: 10px 30px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  letter-spacing: 6px;
+}
+
+/* Section Styles */
+section {
+  padding: 100px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col50 {
+  flex: 0 0 48%;
+  max-width: 48%;
+}
+
+.titleText {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.titleText span {
+  color: #ff0157;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.imgBx {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.imgBx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Menu Styles */
+.menu .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.menu .content .box {
+  flex: 0 0 340px;
+  margin: 20px;
+  border: 15px solid #fff;
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.18);
+}
+
+.menu .content .box .text {
+  padding: 15px;
+}
+
+.menu .content .box .text h3 {
+  font-weight: 400;
+}
+
+/* Testimonials Styles */
+.testimonials {
+  background: url('../images/bg2.jpg') center/cover no-repeat;
+}
+
+.testimonials .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.testimonials .content .box {
+  flex: 0 0 340px;
+  margin: 20px;
+  padding: 40px;
+  background: #fff;
+  text-align: center;
+}
+
+.testimonials .content .box .imgBx {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonials .content .box .imgBx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonials .content .box .text p {
+  color: #474747;
+  font-style: italic;
+}
+
+.testimonials .content .box .text h3 {
+  margin-top: 20px;
+  color: #111;
+  font-size: 1em;
+  font-weight: 600;
+  color: #ff0157;
+}
+
+/* Contact Styles */
+.contact {
+  background: url('../images/bg3.jpg') center/cover no-repeat;
+}
+
+.contactForm {
+  padding: 75px 50px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.18);
+  max-width: 500px;
+  margin-top: 50px;
+}
+
+.contactForm h3 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.contactForm .inputBox {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.contactForm .inputBox input, .contactForm .inputBox textarea {
+  width: 100%;
+  border: 1px solid #555;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  resize: none;
+}
+
+.contactForm .inputBox input[type="submit"] {
+  font-size: 1em;
+  color: #fff;
+  background: #ff0157;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.contactForm .inputBox input[type="submit"]:hover {
+  letter-spacing: 6px;
+}
+
+/* Footer Styles */
+.copyrightText {
+  padding: 8px 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  header, header.sticky {
+      padding: 10px 20px;
+  }
+
+  header .navigation {
+      display: none;
+  }
+
+  header .navigation.active {
+      width: 100%;
+      height: calc(100% - 66px);
+      position: fixed;
+      top: 66px;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #fff;
+  }
+
+  header .navigation li {
+      margin-left: 0;
+  }
+
+  header .navigation li a {
+      color: #111;
+      font-size: 1.6em;
+  }
+
+  .menuToggle {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background: url('../images/menu.png') center/30px no-repeat;
+      cursor: pointer;
+  }
+
+  .menuToggle.active {
+      background: url('../images/close.png') center/30px no-repeat;
+  }
+
+  header.sticky .menuToggle {
+      filter: invert(1);
+  }
+
+  section {
+      padding: 20px;
+  }
+
+  .banner .content h2 {
+      font-size: 3em;
+  }
+
+  .row {
+      flex-direction: column;
+  }
+
+  .row .col50 .imgBx {
+      height: 260px;
+  }
+
+  .titleText {
+      font-size: 1.8em;
+      line-height: 1.5em;
+      margin-bottom: 15px;
+      font-weight: 300;
+  }
+
+  .testimonials .content .box {
+      width: 100%;
+      margin: 10px;
+      padding: 20px;
+      background: #fff;
+      text-align: center;
+  }
+
+  .contactForm {
+      padding: 35px 40px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner .content h2 {
+      font-size: 2.2em;
+  }
+}
+
+  </style>
+  <script>
+ // Add a scroll event listener to make the header sticky
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  header.classList.toggle('sticky', window.scrollY > 0);
+});
+
+// Function to toggle the mobile menu
+function toggleMenu() {
+  const menuToggle = document.querySelector('.menuToggle');
+  const navigation = document.querySelector('.navigation');
+  
+  menuToggle.classList.toggle('active');
+  navigation.classList.toggle('active');
+}
+
+// Add an event listener to the menu toggle button
+const menuToggle = document.querySelector('.menuToggle');
+menuToggle.addEventListener('click', toggleMenu);
+
+  </script>
 </body>
 </html>
